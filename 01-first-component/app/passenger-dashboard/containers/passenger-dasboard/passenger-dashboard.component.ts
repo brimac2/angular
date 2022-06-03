@@ -1,6 +1,7 @@
 import { Component, OnInit, Output } from "@angular/core";
 import { Passenger } from "../../models/passenger.interface";
 import { PassengerDashboardService } from "../../models/passenger-dashboard.service";
+import { ThrowStmt } from "@angular/compiler/src/output/output_ast";
 
 
 @Component ({
@@ -30,7 +31,9 @@ export class PassengerDashboardComponent implements OnInit {
 
 
   ngOnInit() {
-   this.passengers = this.passengerService.getPassengers();
+   this.passengerService
+   .getPassengers()
+   .subscribe((data: Passenger[]) => this.passengers = data);
   }
 
 
@@ -50,3 +53,7 @@ handleRemove(event: Passenger){
   })
 }
 }
+function subscribe(arg0: (data: Passenger[]) => void) {
+  throw new Error("Function not implemented.");
+}
+
