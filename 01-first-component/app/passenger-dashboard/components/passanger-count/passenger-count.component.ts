@@ -10,7 +10,7 @@ template:` <div>
      Total passengers: {{items.length}}
 </div>
 <div>
-     Total checked in: {{checkInCount() }}/{{items.length}}
+     Total checked in: {{checkInCount() }}/{{items?.length}}
 </div>
 </div>
 `
