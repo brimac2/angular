@@ -1,34 +1,3 @@
 {
-  "passengers": [
-    {
-      "id": 1,
-      "name": "Makahhhhl",
-      "checkIn": true,
-      "checkinDate": 2020204,
-      "children": null
-    },
-    {
-      "id": 1,
-      "name": "Jazmes",
-      "checkIn": true,
-      "checkinDate": 201204,
-      "children": null
-    },
-    {
-      "id": 2,
-      "name": "Lala",
-      "checkIn": false,
-      "checkinDate": null,
-      "children": [
-        {
-          "name": "Ted",
-          "age": 12
-        },
-        {
-          "name": "Chloe",
-          "age": 4
-        }
-      ]
-    }
-  ]
+  "passengers": []
 }
