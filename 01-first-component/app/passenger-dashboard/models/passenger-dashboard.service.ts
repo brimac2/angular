@@ -1,27 +1,42 @@
 import { Injectable } from "@angular/core";
-import { Http} from "@angular/http";
+import { Headers, Http, RequestOptions, Response } from "@angular/http";
+import { Observable } from "rxjs";
+import "rxjs/add/operator/map";
+import "rxjs/add/operator/catch";
+import "rxjs/add/observable/throw";
 import { Passenger } from "./passenger.interface";
+
+const PASSENGER_API: string = "/api/passengers";
 
 @Injectable()
 export class PassengerDashboardService {
-  constructor(private http: Http){}
+  constructor(private http: Http) {}
 
+  getPassengers(): Observable<Passenger[]> {
+    return this.http
+    .get(PASSENGER_API)
+    .map((response: Response) => response.json())
+    .catch((error: any) => Observable.throw(error.json()))
 
-getPassengers(): Passenger[] {
-return [{
-  id: 1,
-  name: 'Maka',
-  checkIn: true,
-  checkinDate: 2020204,
-  children: null
-},
-{
- id: 2,
- name: 'Lala',
- checkIn: false,
- checkinDate: null,
- children:[{name: 'Ted', age: 12}, {name: 'Chloe', age: 4}]
-}];
-}
+  };
 
+  updatePassenger(passenger: Passenger): Observable<Passenger>{
+    let headers = new Headers({
+      'Content type': 'application/json'
+    });
+    let options = new RequestOptions({
+      headers: headers
+    });
+    return this.http
+    .put(`${PASSENGER_API}/${passenger.id}`, passenger, options)
+    .map((response: Response) => response.json())
+    .catch((error: any) => Observable.throw(error.json()))
+  }
+
+  removePassenger(passenger: Passenger): Observable<Passenger> {
+    return this.http
+    .delete(`${PASSENGER_API}/${passenger.id}`)
+    .map((response: Response) => response.json())
+    .catch((error: any) => Observable.throw(error.json()))
+  }
 }

@@ -7,10 +7,10 @@ selector: 'passenger-count',
 template:` <div>
    <h3>Airline Passengers!</h3>
    <div>
-     Total passengers: {{items.length}}
+     Total passengers: {{items?.length}}
 </div>
 <div>
-     Total checked in: {{checkInCount() }}/{{items.length}}
+     Total checked in: {{checkInCount() }}/{{items?.length}}
 </div>
 </div>
 `
