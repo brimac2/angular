@@ -18,9 +18,7 @@ template:` <div>
   Check in date:
    {{detail.checkinDate? (detail.checkinDate | date: 'yMMMMd' | uppercase): 'Not checked in' }}
   </div>
-  <div class="children">
-    Children: {{detail.children?.length || 0}}
-  </div>
+
   <button (click) = "toggleEdit()">{{editing ? 'Done' : 'Edit'}}</button>
   <button (click) = "onRemove()">Remove</button>
 </div>`

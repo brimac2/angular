@@ -1,8 +1,6 @@
 import { Component, OnInit, Output } from "@angular/core";
 import { Passenger } from "../../models/passenger.interface";
 import { PassengerDashboardService } from "../../models/passenger-dashboard.service";
-import { error } from "console";
-
 
 
 @Component ({
