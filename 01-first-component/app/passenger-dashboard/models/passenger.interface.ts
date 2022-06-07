@@ -2,6 +2,6 @@ export interface Passenger{
   id: number,
   name: string,
   checkIn: boolean,
-  checkinDate?: number | null
+  checkinDate?: number,
  baggage: string
 }
