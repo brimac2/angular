@@ -11,6 +11,7 @@ import { Passenger } from "../../models/passenger.interface";
     </div>
   `
 })
+// sitoj vietoj bindinam su form passangeriu
 export class PassengerViewerComponent implements OnInit {
   passenger: Passenger;
   constructor(private passengerService: PassengerDashboardService) {}
