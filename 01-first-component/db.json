@@ -1,3 +1,19 @@
 {
-  "passengers": []
+  "passengers": [
+    {
+      "id": 1,
+      "name": "Steve",
+      "checkIn": true,
+      "checkInDate": 1490742000000,
+      "baggage": "none"
+    },
+    {
+      "id": 2,
+      "name": "Rose",
+      "checkIn": false,
+      "checkInDate": null,
+      "baggage": ""
+    }
+
+  ]
 }
